@@ -1,6 +1,6 @@
 const dices: NodeListOf<HTMLElement> = document.querySelectorAll('.dice.faded');
-const button: HTMLButtonElement | null = document.querySelector('button');
-const gameDice: HTMLElement | null = document.querySelector('#dice');
+const button: HTMLButtonElement = document.querySelector('button')!;
+const gameDice: HTMLElement = document.querySelector('#dice')!;
 const gameClass: DOMTokenList | undefined = gameDice?.classList;
 
 let points: number = 0;
@@ -24,13 +24,8 @@ class Dice {
   onRoll(): void {
     const lastClass: string | undefined = gameClass?.item(gameClass.length - 1) || '';
 
-    if (lastClass !== 'dice' && gameClass) {
-      gameClass.remove(lastClass);
-    }
-
-    if (gameClass) {
-      gameClass.add(`dots-${this.dots}`);
-    }
+    if (lastClass !== 'dice' && gameClass) gameClass.remove(lastClass);
+    if (gameClass) gameClass.add(`dots-${this.dots}`);
   }
 }
 

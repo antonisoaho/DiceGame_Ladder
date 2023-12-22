@@ -16,12 +16,10 @@ class Dice {
     }
     onRoll() {
         const lastClass = (gameClass === null || gameClass === void 0 ? void 0 : gameClass.item(gameClass.length - 1)) || '';
-        if (lastClass !== 'dice' && gameClass) {
+        if (lastClass !== 'dice' && gameClass)
             gameClass.remove(lastClass);
-        }
-        if (gameClass) {
+        if (gameClass)
             gameClass.add(`dots-${this.dots}`);
-        }
     }
 }
 const dice = new Dice();
