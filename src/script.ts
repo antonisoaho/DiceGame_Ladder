@@ -16,7 +16,7 @@ class Dice {
   }
 
   roll(): void {
-    const randomIndex = Math.floor(Math.random() * this.sides.length);
+    const randomIndex: number = Math.floor(Math.random() * this.sides.length);
     this.dots = this.sides[randomIndex];
     this.onRoll();
   }
